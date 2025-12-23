@@ -1,4 +1,4 @@
-import { NAV_LINKS, IMPACT_METRICS, PROJECTS } from "../lib/data";
+import { NAV_LINKS, PROJECTS, EXPERIENCE } from "../lib/data";
 import ImpactTicker from "../components/ImpactTicker";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
             I turn <span className="text-blue-600 italic">100-minute</span> problems into <span className="text-green-600">70-minute</span> solutions.
           </h1>
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-            Electrical & Computer Engineering at UBC. Specialized in automation and full-stack systems across legal tech, healthcare, and agriculture.
+            Electrical & Computer Engineering at UBC. Specialized in automation and full-stack systems across legal tech, healthcare, agriculture, and construction.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#projects" className="bg-slate-900 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform">
@@ -43,6 +43,21 @@ export default function Home() {
 
       {/* Impact Metrics - Data-driven from data.ts */}
       <ImpactTicker />
+
+      <section id="experience" className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12">Experience</h2>
+          <div className="grid gap-8">
+            {EXPERIENCE.map((job, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl border border-slate-200">
+                <h3 className="text-xl font-bold">{job.role}</h3>
+                <p className="text-blue-600 mb-4">{job.company}</p>
+                <p className="text-slate-600">{job.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="projects" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
