@@ -5,6 +5,13 @@ export const NAV_LINKS = [
   { name: "Skills", href: "#skills" },
 ];
 
+export const courses = [
+    "Data Structures and Algorithms", 
+    "Object-Oriented Programming", 
+    "Software Construction", 
+    "Deep Learning"
+  ];
+
 export const IMPACT_METRICS = [
   { label: "Production Incidents", value: "-40%", context: "at Clio" },
   { label: "Build/Test Cycles", value: "40% Faster", context: "at LGI" },
