@@ -8,7 +8,12 @@ export const NAV_LINKS = [
 export const courses = [
     "Data Structures and Algorithms", 
     "Object-Oriented Programming", 
-    "Software Construction", 
+    "Software Construction",
+    "Distributed Systems",
+    "Database Systems",
+    "Operating Systems",
+    "Computer Networks",
+    "Machine Learning", 
     "Deep Learning"
   ];
 

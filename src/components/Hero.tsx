@@ -1,36 +1,48 @@
 export default function Hero() {
   return (
-    <section id="home" className="pt-32 pb-20 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <span className="text-xs font-bold tracking-widest uppercase text-slate-500">
-            Status: Seeking New Grad Roles — May 2026
+    <section id="home" className="pt-40 pb-20 px-6 relative overflow-hidden">
+      {/* HUD Accents */}
+      <div className="absolute top-24 left-6 hidden md:block font-mono text-[10px] text-slate-400 space-y-1">
+        <p>LATENCY: 12ms</p>
+        <p>NODE: VAN_BC_CA</p>
+      </div>
+      <div className="absolute top-24 right-6 hidden md:block font-mono text-[10px] text-slate-400 text-right">
+        <p>VERSION: 2026.12.23</p>
+        <p>ENV: PRODUCTION</p>
+      </div>
+
+      <div className="max-w-5xl mx-auto text-center relative">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-widest">
+            Seeking New Grad Roles — May 2026
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-          I build <span className="text-blue-600 italic">autonomous</span> systems that solve <span className="text-green-600">complex</span> bottlenecks.
+        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85] uppercase">
+          Architecting <br />
+          <span className="text-blue-600">Efficiency</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-          Electrical & Computer Engineering at UBC. Specialized in full-stack engineering and CI/CD automation with experience at Clio, LGI, and MacDon.
+        <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+          UBC Electrical & Computer Engineering. Specialized in 
+          <span className="text-slate-900 font-bold"> full-stack automation </span> 
+          and eliminating technical debt in high-scale systems.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#projects" className="bg-slate-900 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform text-center">
-            View My Work
-          </a>
-          <a 
-            href="/Mitul_Pandey_Resume.pdf" 
-            target="_blank"
-            className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-all flex items-center justify-center gap-2"
-          >
-            Download Resume
-          </a>
+        {/* Action HUD */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <a href="#projects" className="group flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-sm font-mono text-sm hover:bg-blue-600 transition-all">
+                <span>[ RUN_PROJECTS ]</span>
+            </a>
+            <a 
+                href="/Mitul_Pandey_Resume.pdf" 
+                target="_blank"             /* Opens in new tab */
+                rel="noopener noreferrer"   /* Security best practice */
+                className="font-mono text-xs text-slate-400 hover:text-blue-600 transition-colors uppercase tracking-widest"
+                >
+                // Fetch_Resume.pdf
+            </a>
         </div>
       </div>
     </section>
