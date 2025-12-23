@@ -4,12 +4,12 @@ export default function ImpactTicker() {
   return (
     <div className="w-full bg-slate-900 py-10 overflow-hidden border-y border-slate-800">
       {/* Container for the scroll */}
-      <div className="flex w-[200%] animate-infinite-scroll">
+      <div className="flex animate-infinite-scroll whitespace-nowrap">
         {/* We map the metrics twice to create the seamless loop effect */}
         {[...IMPACT_METRICS, ...IMPACT_METRICS].map((metric, index) => (
           <div 
             key={index} 
-            className="flex items-center justify-center gap-6 px-12 min-w-[350px]"
+            className="flex items-center justify-center gap-6 px-12 min-w-[350px] whitespace-nowrap"
           >
             <span className="text-4xl font-black text-blue-400 tracking-tighter">
               {metric.value}
