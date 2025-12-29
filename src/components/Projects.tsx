@@ -12,9 +12,9 @@ export default function Projects() {
           <div>
             <p className="text-blue-600 font-mono text-[10px] tracking-[0.3em] md:tracking-[0.5em] mb-4 uppercase flex items-center gap-2 md:gap-3">
               <span className="h-px w-6 md:w-8 bg-blue-600/30" />
-              03_projects_showcase
+              04_projects_showcase
             </p>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9]">
               Featured <span className="italic text-blue-600">Projects</span>
             </h2>
           </div>
@@ -22,9 +22,10 @@ export default function Projects() {
           <a 
             href="https://github.com/coffeemug17" 
             target="_blank" 
+            rel="noopener noreferrer"
             className="group font-mono text-xs text-slate-500 hover:text-blue-600 transition-all flex items-center gap-2"
           >
-            <span className="text-blue-600">//</span> VIEW_GITHUB_REPOS
+            <span className="text-blue-600">//</span> VIEW_ALL_REPOS
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
@@ -45,9 +46,19 @@ export default function Projects() {
                     <div className="w-2.5 h-2.5 rounded-full bg-amber-500/20 group-hover:bg-amber-500 transition-colors" />
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 group-hover:bg-green-500 transition-colors" />
                   </div>
-                  <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">
-                    src/bin/{project.title.toLowerCase().replace(/\s+/g, '_')}.go
-                  </span>
+                  
+                  {/* GitHub Source Link in Header */}
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[9px] font-mono text-slate-500 hover:text-blue-400 transition-colors uppercase tracking-widest flex items-center gap-1.5"
+                  >
+                    <span>view_source</span>
+                    <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
 
                 <div className="p-8 md:p-10">
@@ -67,10 +78,20 @@ export default function Projects() {
                     ))}
                   </div>
                   
-                  {/* Action Link */}
-                  <div className="mt-8 flex justify-end">
-                    <div className="text-[10px] font-mono text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
-                       READY_TO_FORK <span className="animate-pulse">_</span>
+                  {/* Action Link Footer */}
+                  <div className="mt-10 flex justify-between items-center">
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono text-blue-500 border border-blue-500/30 px-4 py-2 rounded hover:bg-blue-500/10 transition-all flex items-center gap-2 group/btn"
+                    >
+                      [ ACCESS_REPOSITORY ]
+                      <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                    </a>
+                    
+                    <div className="text-[9px] font-mono text-slate-600 hidden sm:block italic">
+                      sys.link_secure
                     </div>
                   </div>
                 </div>

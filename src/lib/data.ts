@@ -82,11 +82,13 @@ export const PROJECTS = [
     title: "LinkedUp",
     tech: ["React", "ExpressJS", "MongoDB", "NodeJS", "GitHub Actions"],
     description: "Built a MERN-stack social/job-network prototype with sub-2s local page loads and JWT-based auth.",
+    github: "https://github.com/coffeemug17/LinkedUp"
   },
   {
     title: "Workflow Wiz",
     tech: ["Django", "PostgreSQL", "AJAX", "Bootstrap"],
     description: "Crafted a project management app with real-time chat via Django Channels and role-based access.",
+    github: "https://github.com/coffeemug17/workflowwiz"
   }
 ];
 
