@@ -80,7 +80,7 @@ export const EXPERIENCE = [
 export const PROJECTS = [
   {
     title: "LinkedUp",
-    tech: ["Next.js", "ExpressJS", "MongoDB", "NodeJS", "GitHub Actions"],
+    tech: ["React", "ExpressJS", "MongoDB", "NodeJS", "GitHub Actions"],
     description: "Built a MERN-stack social/job-network prototype with sub-2s local page loads and JWT-based auth.",
   },
   {
@@ -92,6 +92,6 @@ export const PROJECTS = [
 
 export const SKILLS = {
   languages: ["Ruby", "Python", "C#", "C++", "Java", "JavaScript", "TypeScript", "SQL"],
-  frameworks: ["Rails", "Django", "React", "Angular", "Express", "TailwindCSS"],
+  frameworks: ["NextJS", "Rails", "Django", "React", "Angular", "Express", "TailwindCSS"],
   tools: ["Docker", "AWS", "Azure", "DigitalOcean", "CI/CD", "Git"]
 };
