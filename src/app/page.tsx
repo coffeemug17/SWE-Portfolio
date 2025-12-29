@@ -1,4 +1,3 @@
-import { NAV_LINKS } from "../lib/data";
 import ImpactTicker from "../components/ImpactTicker";
 import Footer from "../components/Footer";
 import Experience from "../components/Experience";
@@ -7,6 +6,7 @@ import Skills from "../components/Skills";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Navbar from "../components/Navbar";
+import StatsForNerds from "../components/StatsForNerds";
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Skills />
+      <StatsForNerds />
       <Footer />
     </main>
   );
