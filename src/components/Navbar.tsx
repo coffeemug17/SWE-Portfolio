@@ -7,17 +7,13 @@ export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // --- PHYSICAL MOTION LOGIC ---
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   
-  // Transform velocity into a rotation degree (-10 to 10 degrees)
-  // useSpring smooths out the movement so it doesn't look "jittery"
   const smoothVelocity = useSpring(scrollVelocity, { damping: 15, stiffness: 200 });
-  const rotation = useTransform(smoothVelocity, [-3000, 3000], [45, -45]);
-  const blur = useTransform(smoothVelocity, [-3000, 0, 3000], [2, 0, 2]);
+  const rotation = useTransform(smoothVelocity, [-3000, 3000], [30, -30]);
+  const blur = useTransform(smoothVelocity, [-3000, 0, 3000], [1, 0, 1]);
 
-  // Toggle 'light-mode' class on the HTML root
   useEffect(() => {
     const root = window.document.documentElement;
     if (!isDarkMode) {
@@ -29,107 +25,100 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] max-w-5xl z-[100] 
-                      bg-slate-900/40 backdrop-blur-xl border border-white/10 
-                      rounded-xl md:rounded-2xl transition-all duration-300">
+      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[96%] max-w-7xl z-[100] 
+                      /* Glass Pane for Desktop Only */
+                      bg-slate-950/80 lg:bg-slate-950/40 lg:backdrop-blur-[24px] 
+                      border-2 border-slate-800 lg:border-white/10 lg:border-t-white/20
+                      rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] transition-all duration-300">
         
-        <div className="px-4 md:px-6 h-14 flex items-center justify-between relative">
+        <div className="px-6 md:px-10 h-20 flex items-center justify-between relative">
           
-          {/* System Identity */}
-          <div className="flex items-center gap-4">
+          {/* Identity */}
+          <div className="flex items-center gap-4 shrink-0">
             <div className="flex flex-col">
-              <span className="font-black text-xs tracking-tighter leading-none text-white">MITUL_PANDEY</span>
-              <span className="text-[8px] font-mono text-blue-500 tracking-widest mt-1">SYS_OP_v4.0</span>
+              <span className="font-black text-lg md:text-xl tracking-tighter leading-none text-white uppercase italic">
+                MITUL <span className="text-blue-600">PANDEY</span>
+              </span>
+              <span className="text-[10px] font-mono font-bold text-blue-500 uppercase tracking-[0.3em] mt-1.5">
+                SYS_KERNEL_v4.0
+              </span>
             </div>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex gap-8 uppercase font-mono text-[10px] tracking-widest">
+          {/* Desktop Links (Glass Styled) */}
+          <div className="hidden lg:flex items-center gap-12 uppercase font-mono text-xs font-black tracking-widest">
             {NAV_LINKS.map((link) => (
               <a 
                 key={link.href} 
                 href={link.href} 
-                className="text-white/50 hover:text-blue-400 transition-colors"
+                className="text-slate-200/80 hover:text-blue-400 transition-all hover:scale-110 whitespace-nowrap"
               >
-                ./{link.name.toLowerCase()}
+                <span className="text-blue-900 mr-1.5 font-black opacity-60">/</span>
+                {link.name}
               </a>
             ))}
           </div>
 
-          {/* Right Side: Pull String & Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          {/* Right Tools */}
+          <div className="flex items-center gap-8 shrink-0">
             
-            {/* THE HANGING PULL STRING (Swinging Pendulum) */}
+            {/* The Capacitor Pull */}
             <motion.div 
-              style={{ 
-                rotate: rotation, 
-                originY: 0,
-                filter: useTransform(blur, (v) => `blur(${v}px)`) // Blurs as it swings
-              }}
+              style={{ rotate: rotation, originY: 0, filter: useTransform(blur, (v) => `blur(${v}px)`) }}
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="absolute right-4 md:right-16 top-full cursor-pointer flex flex-col items-center group"
+              className="absolute right-24 xl:right-48 top-full cursor-pointer hidden xl:flex flex-col items-center group"
             >
-              {/* The Wire */}
-              <div className={`w-[1px] transition-all duration-500 group-hover:h-20 h-14 ${!isDarkMode ? 'bg-blue-600 shadow-[0_0_8px_#3b82f6]' : 'bg-slate-500'}`} />
-              
-              {/* The Capacitor Handle */}
-              <div className={`w-3 h-7 rounded-b-sm -mt-px transition-all duration-300 
-                ${isDarkMode ? 'bg-slate-800 border-x border-b border-slate-700' : 'bg-blue-500 shadow-[0_0_15px_#3b82f6] border-x border-b border-blue-400'}`}>
-                <div className="w-full h-1 bg-black/20 mt-1" />
-                <div className="w-full h-1 bg-black/20 mt-1" />
+              <div className={`w-[2px] transition-all duration-500 group-hover:h-28 h-20 ${!isDarkMode ? 'bg-blue-500 shadow-[0_0_15px_#3b82f6]' : 'bg-white/20'}`} />
+              <div className={`w-4 h-10 rounded-b-md -mt-px transition-all duration-300 border border-white/20
+                ${isDarkMode ? 'bg-slate-900/80 backdrop-blur-md' : 'bg-blue-600 border-blue-400 shadow-[0_0_20px_#3b82f6]'}`}>
+                <div className="w-full h-1.5 bg-black/30 mt-2" />
+                <div className="w-full h-1.5 bg-black/30 mt-1.5" />
               </div>
-
-              {/* Status Tooltip */}
-              <span className="mt-2 opacity-0 group-hover:opacity-100 font-mono text-[8px] text-blue-500 uppercase transition-opacity whitespace-nowrap">
-                {isDarkMode ? "PULL_FOR_BLUEPRINT" : "PULL_FOR_DARK"}
-              </span>
             </motion.div>
 
-            {/* Mobile Menu Toggle (The 3 Lines) */}
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex flex-col gap-1.5 md:hidden z-[110] p-2"
-            >
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-            </button>
-
-            {/* Fetch CV Button (Desktop Only) */}
-            <div className="hidden sm:block ml-4">
+            {/* Resume Button */}
+            <div className="hidden sm:block">
               <a 
                 href="/Mitul_Pandey_Resume.pdf" 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="font-mono text-[9px] px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded hover:bg-blue-500/20 transition-all uppercase"
+                className="font-mono text-[11px] font-black px-6 py-3 bg-blue-600/20 backdrop-blur-md border border-blue-500/50 text-blue-400 rounded-xl hover:bg-blue-600 hover:text-white transition-all uppercase shadow-[4px_4px_0px_0px_rgba(37,99,235,0.2)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
               >
-                [ fetch_cv ]
+                [ FETCH_RESUME ]
               </a>
             </div>
+
+            {/* Mobile Burger */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="flex flex-col gap-2 lg:hidden z-[110] p-2"
+            >
+              <div className={`w-8 h-1 bg-white rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-3' : ''}`} />
+              <div className={`w-8 h-1 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+              <div className={`w-8 h-1 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-3' : ''}`} />
+            </button>
           </div>
         </div>
 
-        {/* --- MOBILE EXPANDED MENU (Glass Pane Overlay) --- */}
-        <div className={`absolute top-full left-0 w-full mt-2 md:hidden transition-all duration-500 origin-top
+        {/* MOBILE MENU - Reverted to SOLID HIGH-CONTRAST */}
+        <div className={`absolute top-[calc(100%+12px)] left-0 w-full lg:hidden transition-all duration-500 origin-top
                         ${isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}`}>
-          <div className="bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-xl p-6 flex flex-col gap-6 shadow-2xl">
-            {NAV_LINKS.map((link) => (
+          <div className="bg-[#0a0f1a] border-2 border-slate-800 rounded-2xl p-8 flex flex-col gap-8 shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
+            {NAV_LINKS.map((link, i) => (
               <a 
                 key={link.href} 
                 href={link.href} 
                 onClick={() => setIsMenuOpen(false)}
-                className="font-mono text-xs uppercase tracking-[0.2em] text-white/70 hover:text-blue-400 transition-colors"
+                className="font-mono text-base font-black uppercase tracking-[0.3em] text-slate-200 hover:text-blue-500 flex items-center gap-6"
               >
-                ./{link.name.toLowerCase()}
+                <span className="text-blue-900">0{i}</span>
+                {link.name}
               </a>
             ))}
             <a 
               href="/Mitul_Pandey_Resume.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center font-mono text-[10px] py-4 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-lg uppercase"
+              className="text-center font-mono text-sm font-black py-5 bg-blue-600 text-white rounded-xl uppercase tracking-widest active:scale-95 transition-transform"
             >
-              [ Download Resume ]
+              [ DOWNLOAD_RESUME ]
             </a>
           </div>
         </div>
