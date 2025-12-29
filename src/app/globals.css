@@ -54,6 +54,14 @@ body {
 }
 
 @layer utilities {
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+}
+
+@layer utilities {
   .animate-infinite-scroll {
     display: flex; /* Force children into a row */
     width: max-content; /* Allow container to grow beyond 100% screen width */
