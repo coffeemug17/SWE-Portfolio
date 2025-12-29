@@ -67,7 +67,7 @@ export default function Navbar() {
                 filter: useTransform(blur, (v) => `blur(${v}px)`) // Blurs as it swings
               }}
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="absolute right-12 md:right-16 top-full cursor-pointer flex flex-col items-center group"
+              className="absolute right-4 md:right-16 top-full cursor-pointer flex flex-col items-center group"
             >
               {/* The Wire */}
               <div className={`w-[1px] transition-all duration-500 group-hover:h-20 h-14 ${!isDarkMode ? 'bg-blue-600 shadow-[0_0_8px_#3b82f6]' : 'bg-slate-500'}`} />

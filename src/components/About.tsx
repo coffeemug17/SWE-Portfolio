@@ -14,7 +14,7 @@ export default function About() {
                 01_system_overview
               </span>
               <h2 className="text-4xl font-black mb-6 tracking-tighter uppercase leading-none">
-                The Efficiency <span className="text-blue-600 italic underline decoration-blue-500/30">Mindset</span>
+                About <span className="text-blue-600 italic underline decoration-blue-500/30">Me</span>
               </h2>
             </div>
 
@@ -77,7 +77,7 @@ export default function About() {
               </div>
 
               {/* Terminal Content */}
-              <div className="p-6 font-mono text-[11px] leading-relaxed max-h-[400px] overflow-y-auto">
+              <div className="p-6 font-mono text-[11px] leading-relaxed">
                 <div className="space-y-1">
                   <p className="text-blue-400">[{">"}] Initializing Academic_Kernel_v4.0...</p>
                   <p className="text-slate-500">Reading ROM sectors...</p>
