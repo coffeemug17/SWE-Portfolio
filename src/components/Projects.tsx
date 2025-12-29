@@ -10,9 +10,10 @@ export default function Projects() {
         {/* Responsive Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div>
-            <span className="text-blue-600 font-mono text-[10px] uppercase tracking-[0.4em] mb-3 block">
-              ./build/systems/featured
-            </span>
+            <p className="text-blue-600 font-mono text-[10px] tracking-[0.3em] md:tracking-[0.5em] mb-4 uppercase flex items-center gap-2 md:gap-3">
+              <span className="h-px w-6 md:w-8 bg-blue-600/30" />
+              03_projects_showcase
+            </p>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9]">
               Featured <span className="italic text-blue-600">Projects</span>
             </h2>

@@ -3,12 +3,12 @@ import { useState } from "react";
 import { SKILLS } from "../lib/data";
 
 export default function Skills() {
-  // We'll track which "Nodes" are offline
+  // Track which "Nodes" (skill categories) are offline
   const [offlineNodes, setOfflineNodes] = useState<string[]>([]);
 
   const toggleNode = (id: string) => {
-    setOfflineNodes(prev => 
-      prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]
+    setOfflineNodes((prev) =>
+      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
     );
   };
 
@@ -18,11 +18,22 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 px-6 bg-[var(--background)] transition-colors duration-700 relative overflow-hidden">
-      {/* Background Grid */}
+      {/* Background Decorative Grid */}
       <div className="absolute inset-0 bg-grid-slate-900/[0.03] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
+        {/* 0. Section Header - Consistent with Experience Section */}
+        <div className="mb-16 md:mb-20">
+          <p className="text-blue-600 font-mono text-[10px] tracking-[0.3em] md:tracking-[0.5em] mb-4 uppercase flex items-center gap-2 md:gap-3">
+            <span className="h-px w-6 md:w-8 bg-blue-600/30" />
+            04_capability_matrix
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9] break-words">
+            Technical <span className="text-blue-600 italic">Arsenal</span>
+          </h2>
+        </div>
+
         {/* 1. Cluster Health Dashboard */}
         <div className="mb-12 p-6 bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="flex gap-12 w-full md:w-auto justify-between md:justify-start">
