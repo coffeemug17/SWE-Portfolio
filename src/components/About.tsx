@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 px-6 relative overflow-hidden bg-[var(--background)] transition-colors duration-700">
+    <section id="about" className="py-20 md:py-32 px-6 relative overflow-hidden bg-[var(--background)] transition-colors duration-700 border-b border-slate-900">
       {/* Background Accent */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
       
