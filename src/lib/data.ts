@@ -21,10 +21,26 @@ export const courses = [
   ];
 
 export const IMPACT_METRICS = [
-  { label: "Production Incidents", value: "-40%", context: "at Clio" },
-  { label: "Build/Test Cycles", value: "40% Faster", context: "at LGI" },
-  { label: "Signal Lookup", value: "50% Reduction", context: "at MacDon" },
-  { label: "Test Coverage", value: "90%", context: "at Clio" },
+  { 
+    label: "INCIDENT_RATE", 
+    value: "-40%", 
+    context: "CLIO_PRODUCTION" 
+  },
+  { 
+    label: "CI_CD_VELOCITY", 
+    value: "+40%", 
+    context: "LGI_PIPELINES" 
+  },
+  { 
+    label: "LOOKUP_LATENCY", 
+    value: "-50%", 
+    context: "MACDON_LOGISTICS" 
+  },
+  { 
+    label: "TEST_RELIABILITY", 
+    value: "+30%", 
+    context: "CLIO_STABILITY" 
+  },
 ];
 
 export const EXPERIENCE = [
