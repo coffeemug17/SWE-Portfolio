@@ -12,7 +12,7 @@ export default function Projects() {
           <div>
             <p className="text-blue-500 font-mono text-xs font-black tracking-[0.4em] mb-4 uppercase flex items-center gap-4">
               <span className="h-px w-10 bg-blue-500/40" />
-              04_projects_showcase
+              03_projects_showcase
             </p>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.85] text-white">
               Featured <br /><span className="italic text-blue-600">Projects</span>

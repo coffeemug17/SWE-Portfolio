@@ -111,7 +111,8 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = {
-  languages: ["Ruby", "Python", "C#", "C++", "Java", "JavaScript", "TypeScript", "SQL"],
-  frameworks: ["NextJS", "Rails", "Django", "React", "Angular", "Express", "TailwindCSS"],
-  tools: ["Docker", "AWS", "Azure", "DigitalOcean", "CI/CD", "Git"]
+  languages: ["Ruby", "Python", "C#", "C++", "C", "Java", "JavaScript", "TypeScript", "SQL"],
+  frameworks: ["NextJS", "Rails", "Django", "React", "Angular", "Express", "FastAPI", "Mongoose", "TailwindCSS", "Bootstrap"],
+  tools: ["Docker", "AWS", "Azure", "DigitalOcean", "CI/CD", "Git"],
+  testing: ["RSpec", "Capybara", "Selenium", "Junit", "PyTest", "GTest"]
 };
