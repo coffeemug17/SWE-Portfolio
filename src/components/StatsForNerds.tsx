@@ -80,7 +80,7 @@ export default function StatsForNerds() {
   }, []);
 
   return (
-    <section className="w-full py-24 px-6 relative bg-slate-950 overflow-hidden border-t border-slate-900">
+    <section id="statsfornerds" className="w-full py-24 px-6 relative bg-slate-950 overflow-hidden border-t border-slate-900">
       
       {/* SCANNING BEAM - Increased visibility */}
       {isScanning && (

@@ -9,10 +9,6 @@ html {
   --foreground: #171717;
 }
 
-.light-mode {
-  --bg-main: #f1f5f9;
-  --text-main: #0f172a;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -133,11 +129,4 @@ body {
   to {
     stroke-dashoffset: -20;
   }
-}
-
-.light-mode body {
-  background-image: 
-    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
-  background-size: 30px 30px;
 }
