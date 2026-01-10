@@ -31,8 +31,8 @@ export default function Hero() {
         
         {/* The Narrative: Bolder, larger text */}
         <p className="text-lg md:text-2xl text-slate-400 mb-14 max-w-3xl mx-auto font-medium leading-relaxed px-4">
-          I&apos;m a <span className="text-white font-bold underline decoration-blue-500/50 underline-offset-4">Full-Stack Engineer</span> studying Electrical and Computer Engineering at UBC. 
-          I don&apos;t just write code; I engineer resilient systems that are 
+          I&apos;m a <span className="text-white font-bold decoration-blue-500/50 underline-offset-4">Full-Stack Developer</span> studying Electrical and Computer Engineering at UBC. 
+          I specialize in engineering resilient systems that are 
           <span className="text-blue-500 font-black"> scalable</span> and 
           <span className="text-blue-500 font-black"> purpose-built.</span> 
         </p>

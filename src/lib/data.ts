@@ -83,7 +83,7 @@ export const EXPERIENCE = [
   },
   {
     company: "MacDon Industries",
-    role: "Software Engineer Co-op",
+    role: "Software Developer Co-op",
     period: "May 2022 - Sept 2022",
     location: "Winnipeg, MB",
     description: "Developed Python-based scraper modules to standardize 200 raw CAN signal files into DBC format.",
